@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title:string = 'Age Teller';
+  date = new Date();
+  showDiff = false;
+  diff = '';
+  onClick() {
+    this.showDiff = true;
+  };
+
 }
