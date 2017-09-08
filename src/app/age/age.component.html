@@ -1,6 +1,7 @@
-<h1>
-  Hi {{title}}
-</h1>
-<p>
-  {{diff}}
-</p>
+<div *ngIf='age; else elseBlock'>
+  <h3>{{age.year}} Years, {{age.month}} months, {{age.day}} Days</h3>
+  <img [src]='img' alt='Congrats' class='partyPopper'/>
+</div>
+<ng-template #elseBlock>
+  <h3>Hello, Select your Date of Birth to calculate your age</h3>
+</ng-template>

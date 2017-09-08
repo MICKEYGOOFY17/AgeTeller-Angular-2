@@ -8,10 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title:string = 'Age Teller';
   date = new Date();
-  showDiff = false;
-  diff = '';
-  onClick() {
-    this.showDiff = true;
-  };
-
 }

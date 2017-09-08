@@ -1,16 +1,24 @@
 import { Component, Input } from '@angular/core';
 
+import { Age } from './age.model';
+
 @Component({
   selector: 'age',
-  templateUrl: './age.component.html'
+  templateUrl: './age.component.html',
+  styles: [
+    `.partyPopper {
+      height: 200px;
+      width: 200px;
+    }`
+  ]
 })
 
 export class AgeComponent {
   title = 'yuva';
-  diff = '';
+  img = './../../assets/party-popper.jpg';
+  age;
   @Input() date;
   calculate() {
-    console.log(this.date);
     let today = new Date().getTime();
     let birthday = new Date(this.date).getTime();
     let diff = Math.abs(today - birthday);
@@ -20,6 +28,6 @@ export class AgeComponent {
     days -= years * 365;
     let months = Math.floor(days/ 31);
     days -= months * 31;
-    this.diff = `${years} Years, ${months} months, ${days} Days`;
+    this.age = new Age(days, months, years);
   }
 }
